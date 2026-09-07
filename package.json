@@ -1,0 +1,10 @@
+{
+  "name": "titan-ridge-company",
+  "version": "1.0.0",
+  "description": "Production static site for Titan Ridge Company (General Contracting, Trading & Industrial Services)",
+  "private": true,
+  "scripts": {
+    "start": "node preview.mjs",
+    "dev": "node preview.mjs"
+  }
+}

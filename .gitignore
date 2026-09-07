@@ -1,0 +1,13 @@
+# Heavy source media and archives
+Titan Ridge Profile images/
+*.zip
+*.pdf
+brand-source/
+
+# OS and Editor files
+.DS_Store
+Thumbs.db
+*.log
+
+# Vercel
+.vercel

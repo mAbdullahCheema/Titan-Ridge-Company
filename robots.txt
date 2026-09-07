@@ -1,0 +1,5 @@
+# Titan Ridge Company
+User-agent: *
+Allow: /
+
+Sitemap: https://titanridgeksa.com/sitemap.xml
