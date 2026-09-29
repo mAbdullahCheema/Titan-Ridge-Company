@@ -89,8 +89,8 @@ a:hover{color:#FFFFFF}
 .trc-div-row:hover .trc-div-cta{background:linear-gradient(180deg,#2E7BD6,#1256A6);border-color:rgba(62,141,224,.85);color:#FFFFFF}
 @media (max-width:900px){.trc-div-grid{grid-template-columns:clamp(112px,26vw,150px) minmax(0,1fr) !important}.trc-div-meta{grid-column:1 / -1;flex-direction:row !important;align-items:center !important;justify-content:space-between !important;padding:0 4px 4px !important}}
 @media (max-width:520px){.trc-div-grid{grid-template-columns:minmax(0,1fr) !important}}
-.trc-hd-logo{position:relative;display:block;height:auto;width:min(244px,calc(100vw - 130px - max(32px,8vw)));max-width:100%;object-fit:contain}
-@media (min-width:980px){.trc-hd-logo{width:auto;height:clamp(54px,7vw,78px)}}
+.trc-hd-logo{position:relative;display:block;height:auto;width:min(260px,calc(100vw - 130px - max(32px,8vw)));max-width:100%;object-fit:contain}
+@media (min-width:980px){.trc-hd-logo{width:auto;height:clamp(62px,5.8vw,78px);max-height:78px}}
 .trc-cap-btn:hover{background:linear-gradient(180deg,#2E7BD6,#1256A6) !important;border-color:rgba(62,141,224,.85) !important;color:#FFFFFF !important}
 @media (prefers-reduced-motion:reduce){*{animation-duration:1ms !important;transition-duration:1ms !important}.trc-glide{animation:none !important}}
 .trc-error-shake{animation:trc-shake .42s cubic-bezier(.36,.07,.19,.97)}
@@ -299,45 +299,33 @@ window.__resources = {};
 
   <header style="position:fixed;top:{{ headerTop }};left:0;right:0;z-index:100;background:{{ headerBg }};backdrop-filter:{{ headerBlur }};-webkit-backdrop-filter:{{ headerBlur }};border-bottom:1px solid {{ headerBorder }};box-shadow:{{ headerShadow }};transition:background .3s ease,border-color .3s ease,box-shadow .3s ease">
     <div style="width:100%;max-width:1320px;margin:0 auto;padding:0 clamp(16px,4vw,54px);min-height:96px;display:flex;align-items:center;gap:18px;justify-content:space-between">
-      <button sc-camel-on-click="{{ goHome }}" aria-label="Titan Ridge Company — home" style="position:relative;padding:0;cursor:pointer;flex:0 1 auto;min-width:0;display:flex;align-items:center;background:none;border:0">
+      <button sc-camel-on-click="{{ goHome }}" aria-label="Titan Ridge Company — home" style="position:relative;padding:0;cursor:pointer;flex:0 0 auto;display:flex;align-items:center;background:none;border:0">
         <img src="/assets/images/logo-cta.png" alt="Titan Ridge Company — شركة تيتان ريدج" width="880" height="254" fetchpriority="high" class="trc-hd-logo">
       </button>
 
       <sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
-      <nav style="display:flex;align-items:center;gap:4px;padding:5px;border-radius:999px;border:1px solid rgba(255,255,255,.12);background:rgba(8,12,19,.5);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 8px 30px -12px rgba(0,0,0,.9),inset 0 1px 0 rgba(255,255,255,.07)">
+      <nav style="display:flex;align-items:center;gap:4px;padding:5px;border-radius:999px;border:1px solid rgba(255,255,255,.12);background:rgba(8,12,19,.5);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 8px 30px -12px rgba(0,0,0,.9),inset 0 1px 0 rgba(255,255,255,.07);flex:none">
         <sc-for list="{{ navItems }}" as="n" hint-placeholder-count="4">
-          <a href="{{ n.href }}" sc-camel-on-click="{{ n.go }}" style="text-decoration:none;background:none;border:0;cursor:pointer;padding:11px 18px;border-radius:999px;font-size:15px;font-weight:600;letter-spacing:-.012em;text-shadow:0 1px 8px rgba(4,8,14,.8);position:relative;color:{{ n.color }};background:{{ n.bg }}" style-hover="color:#FFFFFF">{{ n.label }}</a>
+          <a href="{{ n.href }}" sc-camel-on-click="{{ n.go }}" style="text-decoration:none;background:none;border:0;cursor:pointer;padding:11px 18px;border-radius:999px;font-size:15px;font-weight:600;letter-spacing:-.012em;text-shadow:0 1px 8px rgba(4,8,14,.8);position:relative;white-space:nowrap;color:{{ n.color }};background:{{ n.bg }}" style-hover="color:#FFFFFF">{{ n.label }}</a>
         </sc-for>
       </nav>
       <div style="display:flex;align-items:center;gap:12px;flex:none">
         <sc-if value="{{ isWide }}" hint-placeholder-val="{{ true }}">
-        <a href="mailto:Info@titanridgeksa.com" style="display:flex;align-items:center;gap:11px;padding:7px 17px 7px 7px;border-radius:999px;border:1px solid rgba(255,255,255,.13);background:rgba(8,12,19,.5);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 8px 30px -12px rgba(0,0,0,.9);text-decoration:none" style-hover="border-color:rgba(46,123,214,.55);background:rgba(46,123,214,.12)">
-          <span style="width:34px;height:34px;flex:none;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(140deg,#2E7BD6,#1256A6);color:#fff;box-shadow:0 6px 16px -6px rgba(46,123,214,.9)"><i data-lucide="mail" style="width:16px;height:16px"></i></span>
-          <span style="display:flex;flex-direction:column;line-height:1.15;text-align:left">
-            <span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#9FC8F5">Email us</span>
-            <span style="font-size:15px;font-weight:700;letter-spacing:-.012em;color:#FFFFFF">Info@titanridgeksa.com</span>
-          </span>
-        </a>
         <a href="tel:+966500693067" style="display:flex;align-items:center;gap:11px;padding:7px 17px 7px 7px;border-radius:999px;border:1px solid rgba(255,255,255,.13);background:rgba(8,12,19,.5);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 8px 30px -12px rgba(0,0,0,.9);text-decoration:none" style-hover="border-color:rgba(46,123,214,.55);background:rgba(46,123,214,.12)">
           <span style="width:34px;height:34px;flex:none;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(140deg,#2E7BD6,#1256A6);color:#fff;box-shadow:0 6px 16px -6px rgba(46,123,214,.9)"><i data-lucide="phone" style="width:16px;height:16px"></i></span>
-          <span style="display:flex;flex-direction:column;line-height:1.15;text-align:left">
+          <span style="display:flex;flex-direction:column;line-height:1.15;text-align:left;white-space:nowrap">
             <span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#9FC8F5">Talk to us</span>
             <span style="font-size:15px;font-weight:700;letter-spacing:-.012em;color:#FFFFFF">+966 50 069 3067</span>
           </span>
         </a>
         </sc-if>
-        <sc-if value="{{ isMedium }}" hint-placeholder-val="{{ false }}">
-        <a href="mailto:Info@titanridgeksa.com" aria-label="Email Titan Ridge Company" title="Email: Info@titanridgeksa.com" style="width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(8,12,19,.5);border:1px solid rgba(255,255,255,.13);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);color:#8FC0F2;text-decoration:none;box-shadow:0 8px 30px -12px rgba(0,0,0,.9)" style-hover="border-color:rgba(46,123,214,.55);background:rgba(46,123,214,.12);color:#FFFFFF"><i data-lucide="mail" style="width:18px;height:18px"></i></a>
-        <a href="tel:+966500693067" aria-label="Call Titan Ridge Company" title="Call: +966 50 069 3067" style="width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(140deg,#2E7BD6,#1256A6);color:#fff;box-shadow:0 6px 16px -6px rgba(46,123,214,.9);text-decoration:none"><i data-lucide="phone" style="width:18px;height:18px"></i></a>
-        </sc-if>
-        <button sc-camel-on-click="{{ goQuote }}" style="cursor:pointer;border:0;padding:15px 25px;min-height:50px;border-radius:999px;background:linear-gradient(180deg,#2E7BD6,#1256A6);color:#fff;font-size:14.5px;font-weight:700;letter-spacing:-.008em;display:inline-flex;align-items:center;gap:9px;box-shadow:0 10px 28px -10px rgba(46,123,214,.85),inset 0 1px 0 rgba(255,255,255,.28)">Request a quote<i data-lucide="arrow-right" style="width:16px;height:16px"></i></button>
+        <button sc-camel-on-click="{{ goQuote }}" style="cursor:pointer;border:0;padding:15px 25px;min-height:50px;border-radius:999px;background:linear-gradient(180deg,#2E7BD6,#1256A6);color:#fff;font-size:14.5px;font-weight:700;letter-spacing:-.008em;display:inline-flex;align-items:center;gap:9px;white-space:nowrap;box-shadow:0 10px 28px -10px rgba(46,123,214,.85),inset 0 1px 0 rgba(255,255,255,.28)">Request a quote<i data-lucide="arrow-right" style="width:16px;height:16px"></i></button>
       </div>
       </sc-if>
 
       <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
       <div style="display:flex;align-items:center;gap:10px;flex:none">
-        <a href="mailto:Info@titanridgeksa.com" aria-label="Email Titan Ridge Company" title="Email: Info@titanridgeksa.com" style="width:48px;height:48px;border-radius:17px;display:flex;align-items:center;justify-content:center;background:rgba(8,12,19,.6);border:1px solid rgba(255,255,255,.16);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);color:#8FC0F2;box-shadow:0 8px 20px -8px rgba(0,0,0,.7);text-decoration:none"><i data-lucide="mail" style="width:20px;height:20px"></i></a>
-        <a href="tel:+966500693067" aria-label="Call Titan Ridge Company" title="Call: +966 50 069 3067" style="width:48px;height:48px;border-radius:17px;display:flex;align-items:center;justify-content:center;background:linear-gradient(140deg,#2E7BD6,#1256A6);color:#fff;box-shadow:0 8px 20px -8px rgba(46,123,214,.9);text-decoration:none"><i data-lucide="phone" style="width:20px;height:20px"></i></a>
+        <a href="tel:+966500693067" aria-label="Call Titan Ridge" style="width:48px;height:48px;border-radius:17px;display:flex;align-items:center;justify-content:center;background:linear-gradient(140deg,#2E7BD6,#1256A6);color:#fff;box-shadow:0 8px 20px -8px rgba(46,123,214,.9);text-decoration:none"><i data-lucide="phone" style="width:20px;height:20px"></i></a>
         <button sc-camel-on-click="{{ toggleNav }}" aria-label="Menu" style="display:flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:17px;border:1px solid rgba(255,255,255,.16);background:rgba(8,12,19,.55);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);cursor:pointer;color:#FFFFFF"><i data-lucide="{{ navIcon }}" style="width:22px;height:22px"></i></button>
       </div>
       </sc-if>
@@ -2265,7 +2253,7 @@ class Component extends DCLogic {
       drawerTop: (Math.max(0, 41 - s.scroll) + 97 + 22) + "px",
       headerBorder: scrolled ? "rgba(143,192,242,.16)" : "transparent",
       headerShadow: scrolled ? "0 22px 52px -32px rgba(0,0,0,.95),inset 0 1px 0 rgba(255,255,255,.07)" : "none",
-      isDesktop, isMobile: !isDesktop, isWide: s.w >= 1340, isMedium: s.w >= 980 && s.w < 1340,
+      isDesktop, isMobile: !isDesktop, isWide: s.w >= 1240,
       topLoc: s.w < 420 ? "Riyadh · Saudi Arabia" : (s.w < 620 ? "Riyadh · Kingdom of Saudi Arabia" : "Al Awaly District · Riyadh · Kingdom of Saudi Arabia"),
       navOpen: s.navOpen, navIcon: s.navOpen ? "x" : "menu",
       toggleNav: () => this.setState((p) => ({ navOpen: !p.navOpen })),
