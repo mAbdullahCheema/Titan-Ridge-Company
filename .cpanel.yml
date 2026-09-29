@@ -1,0 +1,8 @@
+---
+deployment:
+  tasks:
+    # 1. Target directory: $HOME/public_html/ maps automatically to your cPanel user's public web directory.
+    #    (If this is an addon domain or subdomain, change $HOME/public_html/ to $HOME/public_html/your_folder/ or similar).
+    # 2. Commands are chained with '&&' so DEPLOYPATH persists across all copy commands in the same execution shell.
+    # 3. Only production files and assets are copied; dev scripts, .git, and source media stay excluded.
+    - export DEPLOYPATH=${DEPLOYPATH:-$HOME/public_html/} && /bin/mkdir -p $DEPLOYPATH && /bin/cp -f index.html favicon.ico apple-touch-icon.png robots.txt sitemap.xml site.webmanifest .htaccess $DEPLOYPATH && /bin/cp -Rf assets $DEPLOYPATH

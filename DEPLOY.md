@@ -103,6 +103,25 @@ FileZilla:
 Upload into `/public_html`. In FileZilla, enable
 **Server → Force showing hidden files** so `.htaccess` transfers.
 
+### Option C — cPanel Git Version Control (Automated via GitHub)
+
+The repository includes `.cpanel.yml` pre-configured to automatically deploy
+production files (`index.html`, `.htaccess`, `assets/`, icons, etc.) to
+`public_html/`.
+
+1. In cPanel, navigate to **Files → Git Version Control**.
+2. Click **Create** (top right).
+3. Set **Clone URL**: `https://github.com/mAbdullahCheema/Titan-Ridge-Company.git`
+4. Set **Repository Path**: `repositories/titan-ridge` (keep it outside `public_html`).
+5. Set **Repository Name**: `titan-ridge`
+6. Click **Create** and wait for cPanel to finish cloning.
+7. Click **Manage** next to the cloned repository.
+8. Go to the **Pull or Deploy** tab.
+9. Click **Deploy Head**. cPanel executes `.cpanel.yml` and copies the live files directly to `public_html/`.
+
+**For future updates**:
+After pushing new commits to GitHub, open **Git Version Control → Manage → Pull or Deploy**, click **Update from Remote**, then click **Deploy Head**.
+
 ---
 
 ## 4. Turn on HTTPS
